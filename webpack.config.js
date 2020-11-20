@@ -30,6 +30,15 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
+      },
+
+      {
+        test: /\.js$/,
+        exclude: '/node_modules/',
+        use: [
+          'babel-loader?compact=false',
+          'eslint-loader'
+        ]
       }
     ]
   },
@@ -37,14 +46,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
 
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: 'src/assets/images',
-    //       to: path.resolve(__dirname, 'dist/assets/images')
-    //     }
-    //   ]
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/images',
+          to: path.resolve(__dirname, 'dist/assets/images')
+        }
+      ]
+    }),
 
     new ImageminWebpPlugin({
       config: [{
