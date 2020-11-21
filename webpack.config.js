@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const ImageminWebpPlugin = require('imagemin-webp-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
-const imageminMozjpeg = require('imagemin-mozjpeg')
+// const imageminMozjpeg = require('imagemin-mozjpeg')
 
 module.exports = {
   mode: 'development',

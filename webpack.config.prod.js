@@ -3,9 +3,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const ImageminWebpPlugin = require('imagemin-webp-webpack-plugin')
+// const ImageminWebpPlugin = require('imagemin-webp-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
-const imageminMozjpeg = require('imagemin-mozjpeg')
+// const imageminMozjpeg = require('imagemin-mozjpeg')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -20,7 +20,7 @@ module.exports = {
 
     /* name of the repo (if deploying to gh-pages) ('/repo-name/')
       or '/' (if deploying to firebase) */
-    publicPath: '/'
+    publicPath: '/building-with-backgrounds-and-gradients/'
   },
 
   devServer: {
@@ -46,6 +46,11 @@ module.exports = {
           'babel-loader?compact=false',
           'eslint-loader'
         ]
+      },
+
+      {
+        test: /\.jpg$/,
+        use: 'url-loader'
       }
     ]
   },
@@ -65,26 +70,26 @@ module.exports = {
       ]
     }),
 
-    new ImageminWebpPlugin({
-      config: [{
-        test: /\.(jpe?g|png)/,
-        options: {
-          quality: 60
-        }
-      }]
-    }),
+    // new ImageminWebpPlugin({
+    //   config: [{
+    //     test: /\.(jpe?g|png)/,
+    //     options: {
+    //       quality: 90
+    //     }
+    //   }]
+    // }),
 
     new ImageminPlugin({
       jpegtran: null,
       gifsicle: null,
-      optipng: null,
+      optipng: null
 
-      plugins: [
-        imageminMozjpeg({
-          quality: 75,
-          progressive: true
-        })
-      ]
+      // plugins: [
+      //   imageminMozjpeg({
+      //     quality: 75,
+      //     progressive: true
+      //   })
+      // ]
     })
   ]
 }
