@@ -13,7 +13,11 @@ html {
 */
 
 .header {
-  margin: 70px 0 30px 0;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .header__nav-bar {
@@ -160,16 +164,30 @@ html {
   opacity: 0;
 }
 
-.promo__header {
+/*
+* Main Content
+*/
+
+.promo {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 160px;
+  padding-bottom: 140px;
 
   text-align: center;
+
+  background-image: url("../assets/images/background-image-resized.jpg");
+  background-position: bottom;
+  background-size: cover;
 }
 
 .promo__link {
-  width: 65%;
+  z-index: 1;
+
+  max-width: 65%;
 
   color: #fff;
   line-height: 1.5;
@@ -200,4 +218,35 @@ html {
 
 .promo__video-link:hover {
   text-decoration: underline;
+}
+
+.promo__background-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+
+  background-color: transparent;
+}
+
+/*
+* Other Links
+*/
+
+.other-links {
+  display: flex;
+}
+
+.other-links__link {
+  display: inline-block;
+  flex: 0 1 auto;
+
+  min-width: 270px;
+}
+
+.other-links__img {
+  width: 100%;
 }
