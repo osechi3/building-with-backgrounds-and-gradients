@@ -39,6 +39,11 @@ module.exports = {
           'babel-loader?compact=false',
           'eslint-loader'
         ]
+      },
+
+      {
+        test: /\.jpg$/,
+        use: 'url-loader'
       }
     ]
   },
