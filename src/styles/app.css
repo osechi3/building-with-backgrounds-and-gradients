@@ -249,3 +249,70 @@ html {
 .other-links__img {
   width: 100%;
 }
+
+/*
+* Footer
+*/
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 25px 0 30px 0;
+
+  color: #6e6e6e;
+  font-size: 11px;
+}
+
+.footer__additional-info {
+  margin: 8px 0;
+}
+
+.footer__link {
+  color: #08c;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__other-links-list {
+  display: flex;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.footer__list-link {
+  padding-right: 5px;
+
+  border-right: 1px solid #ccc;
+}
+
+.footer__last-list-link {
+  border: none;
+}
+
+/* For accessibility reasons */
+.footer__list-item::before {
+  content: "\200B";
+}
+
+.footer__copyright-text {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+
+  font-size: 11px;
+}
+
+.footer__terms-of-use-link {
+  padding-right: 5px;
+
+  border-right: 1px solid #ccc;
+}
+
+.footer__privacy-policy-link {
+  padding-left: 5px;
+}
